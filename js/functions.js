@@ -75,11 +75,103 @@ console.log(
     "Módulo = " + modulo
     )
 
-var respuesta =     "Suma = " + suma + "<br>" + "Resta = " + resta + "<br>" + "Multi = " + multi + "<br>" + "División = " + divi.toFixed(2) + "<br>" + "Módulo = " + modulo;
+var respuesta = "Suma = " + suma + "<br>" + "Resta = " + resta + "<br>" + "Multi = " + multi + "<br>" + "División = " + divi.toFixed(2) + "<br>" + "Módulo = " + modulo;
 
 Swal.fire({
     icon: 'success',
     title: 'Resultados',
     html: respuesta,
-    background: '#fff'
+    background: '#fff',
+    timer: 1000,
+    showConfirmButton: false
 });
+
+// ########## OPERADORES LÓGICOS Y ESTRUCTURAS CONDICIONALES (inverse, incremento y decremento)
+// AND & con if
+var bool = false;
+var numeric = 5;
+if(!bool && numeric === "5"){ //!bool == true
+    console.log(bool);
+    count++; // incremento
+}
+else{
+    console.log(bool);
+    count--; //decremento
+}
+// = es para asignar valores
+// == comparar contenido
+// === comparar cotenido y tipo de dato
+console.log(count);
+
+// OR || con if
+var age = 32;
+if(age === 31 || numeric == "5"){
+    console.log("una o dos variables aceptadas");
+}
+else{
+    console.log("ninguna variable aceptada");
+}
+
+// FOR
+for(let i=0; i < array_tex.length; i++){
+    console.log(array_tex[i] + (i+1))
+}
+
+// WHILE
+let j = 0;
+while(j<array_tex.length){
+    console.log(array_tex[j] + (j+1));
+    j++
+}
+
+// DO WHILE
+let w = 0;
+do{
+    console.log(array_tex[w] + (w+1));
+    w++;
+}while (w<array_tex.length)
+
+
+
+// EVENTOS
+function enviar(){
+    document.body.style.backgroundColor = "red";
+    document.body.style.color = "#fff";
+}
+
+const btn_limpiar = document.querySelector("#limpiar");
+
+btn_limpiar.addEventListener("click", () => {
+    document.body.style.backgroundColor = "#fff";
+    document.body.style.color = "#000";
+});
+
+// EJERCICIO
+const form_register = document.getElementById("form_register");
+const nombres       = document.getElementById("nombres");
+const apellidos     = document.getElementById("apellidos");
+const information   = document.getElementById("information");
+
+form_register.addEventListener("submit", name_event => {
+    name_event.preventDefault();
+    let info = ""
+    if(nombres.value.length <=2 || apellidos.value.length <3 ){
+        info += "Nombres y apellidos deben ser mayores o iguales a 3 caracteres"
+        information.style.color = "red"
+    }
+    else{
+        alert("INFORMACIÓN CORRECTAMENTE")
+    }
+    information.innerText = info;
+    // information.innerText == "HOLA"
+});
+
+function accion(){
+    let accion = document.getElementById("accion");
+    if(accion.value.length == 0){
+        accion.style.backgroundColor = "red";
+    }
+    else{
+        accion.style.backgroundColor = "green";
+    }
+}
