@@ -175,3 +175,29 @@ function accion(){
         accion.style.backgroundColor = "green";
     }
 }
+
+function load_page(){
+    document.getElementById("nombres").focus();
+    document.getElementById("apellidos").disabled = true;
+    let date = new Date();
+    console.log(date.getFullYear());
+
+    for(let a=0;a<array_mul.length;a++){
+        console.log(array_mul[a].name);
+    }
+}
+
+function validate(){
+    let nombres = document.getElementById("nombres").value;
+    console.log(nombres.length);
+    if(nombres.length > 2){
+        document.getElementById("apellidos").disabled = false;
+        document.getElementById("apellidos").focus(); 
+        alert(nombres.split(""));      
+    }
+
+}
+
+function limpiar(){
+    let nombres = document.getElementById("nombres").value;
+}
